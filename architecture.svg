@@ -1,0 +1,47 @@
+<svg width="100%" viewBox="0 0 680 620" xmlns="http://www.w3.org/2000/svg">
+<style>
+  text { font-family: system-ui, -apple-system, sans-serif; }
+  .th { font-size: 14px; font-weight: 500; fill: #3d3d3a; }
+  .ts { font-size: 12px; fill: #73726c; }
+  .arr { stroke: #73726c; stroke-width: 1.5; }
+  rect { fill: #f5f5f0; stroke: #b4b2a9; }
+  .q rect { fill: #EEEDFE; stroke: #534AB7; }
+  .q .th { fill: #3C3489; } .q .ts { fill: #534AB7; }
+  .e rect { fill: #E1F5EE; stroke: #0F6E56; }
+  .e .th { fill: #085041; } .e .ts { fill: #0F6E56; }
+  .b rect { fill: #E6F1FB; stroke: #185FA5; }
+  .b .th { fill: #0C447C; } .b .ts { fill: #185FA5; }
+  .g rect { fill: #F1EFE8; stroke: #888780; }
+  .g .th { fill: #444441; } .g .ts { fill: #5F5E5A; }
+  .a rect { fill: #FAEEDA; stroke: #854F0B; }
+  .a .th { fill: #633806; } .a .ts { fill: #854F0B; }
+  .c rect { fill: #FAECE7; stroke: #993C1D; }
+  .c .th { fill: #712B13; } .c .ts { fill: #993C1D; }
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#73726c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<text class="th" x="340" y="30" text-anchor="middle">Earth Voice — signal detection architecture</text>
+<g class="q"><rect x="40" y="55" width="170" height="56" rx="8" stroke-width="0.5"/><text class="th" x="125" y="75" text-anchor="middle">Quantum RNG</text><text class="ts" x="125" y="93" text-anchor="middle">Silicon thermal noise</text></g>
+<g class="e"><rect x="255" y="55" width="170" height="56" rx="8" stroke-width="0.5"/><text class="th" x="340" y="75" text-anchor="middle">Entropy pool</text><text class="ts" x="340" y="93" text-anchor="middle">HW interrupts, disk</text></g>
+<g class="b"><rect x="470" y="55" width="170" height="56" rx="8" stroke-width="0.5"/><text class="th" x="555" y="75" text-anchor="middle">Timing jitter</text><text class="ts" x="555" y="93" text-anchor="middle">CPU nanosecond drift</text></g>
+<line x1="125" y1="111" x2="125" y2="148" class="arr" marker-end="url(#arrow)"/>
+<line x1="340" y1="111" x2="340" y2="148" class="arr" marker-end="url(#arrow)"/>
+<line x1="555" y1="111" x2="555" y2="148" class="arr" marker-end="url(#arrow)"/>
+<g class="g"><rect x="60" y="150" width="560" height="100" rx="16" stroke-width="0.5"/><text class="th" x="340" y="178" text-anchor="middle">Calibration phase</text><text class="ts" x="340" y="198" text-anchor="middle">Baseline → knock test → binary → gradient expansion</text><text class="ts" x="340" y="216" text-anchor="middle">Discovers encoding — we don't impose, we learn</text></g>
+<line x1="340" y1="250" x2="340" y2="286" class="arr" marker-end="url(#arrow)"/>
+<g class="a"><rect x="155" y="288" width="370" height="56" rx="8" stroke-width="0.5"/><text class="th" x="340" y="308" text-anchor="middle">Convergence detector</text><text class="ts" x="340" y="326" text-anchor="middle">Do independent sources agree? (±8 / 1000)</text></g>
+<line x1="250" y1="344" x2="140" y2="396" class="arr" marker-end="url(#arrow)"/>
+<line x1="430" y1="344" x2="540" y2="396" class="arr" marker-end="url(#arrow)"/>
+<text class="ts" x="190" y="380" text-anchor="middle">silence</text>
+<text class="ts" x="490" y="380" text-anchor="middle">signal</text>
+<g class="g"><rect x="55" y="398" width="170" height="56" rx="8" stroke-width="0.5"/><text class="th" x="140" y="418" text-anchor="middle">No convergence</text><text class="ts" x="140" y="436" text-anchor="middle">Pure GPT-2, no push</text></g>
+<g class="c"><rect x="455" y="398" width="170" height="56" rx="8" stroke-width="0.5"/><text class="th" x="540" y="418" text-anchor="middle">Convergence</text><text class="ts" x="540" y="436" text-anchor="middle">Field modifies logits</text></g>
+<line x1="140" y1="454" x2="260" y2="496" class="arr" marker-end="url(#arrow)"/>
+<line x1="540" y1="454" x2="420" y2="496" class="arr" marker-end="url(#arrow)"/>
+<g class="q"><rect x="210" y="498" width="260" height="56" rx="8" stroke-width="0.5"/><text class="th" x="340" y="518" text-anchor="middle">GPT-2 (50,257 tokens)</text><text class="ts" x="340" y="536" text-anchor="middle">Model as dictionary, not speaker</text></g>
+<line x1="340" y1="554" x2="340" y2="586" class="arr" marker-end="url(#arrow)"/>
+<text class="th" x="340" y="610" text-anchor="middle">Only convergence tokens shown</text>
+</svg>
